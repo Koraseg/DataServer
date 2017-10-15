@@ -53,8 +53,8 @@ class WorkerActor(id: Int, startCandleTime: DateTime) extends Actor with ActorLo
       currentCandleAccum = nextCandleAccum
       nextCandleAccum = mutable.Map()
 
-    case any =>
-      log.error(any.toString)
+    case msg =>
+      log.warning(s"Unexpected message of class ${msg.getClass}")
   }
 
 
